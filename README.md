@@ -5,20 +5,25 @@
 ## **🌍 1. Introduction**
 <a href=#cont>Back to Project Structure</a>
 
-### 1.1 Database Overview 📝 
-The Northwind database is a database provided by `Microsoft` that models a fictional company called Northwind Traders. This fictious company imports and exports specialty foods from all around the world. The database is organized around typical sales and supply chain data, making it useful for an ideal project that showcase how to handle common business scenarios.
-It includes information about orders, customers, suppliers, products, employees, and shippers.
+### 1.1 Project Overview 📝 
+This project focuses on supporting Pizza Mania’s commitment to growth, operational excellence, and exceptional customer experience through data-driven decision-making. By analyzing business data, the goal is to uncover key insights, identify emerging trends, and highlight actionable opportunities to enhance performance, optimize operations, and drive strategic growth.
 
 ### 1.2 Problem Statement ⚠️
 
-#### 1.2.1 Objective 🎯
-As the CEO of Northwind Traders, I am commissioning you on this data-driven project to uncover critical insights across our customer base, product categories, and sales trends, as well as assess employee performance and discount impacts. Your analysis will aim to answer essential business questions and provide actionable recommendations that support strategic decision-making in customer engagement, revenue growth, and operational efficiency. Given that SQL will be used exclusively, this project will not involve data visualization but should deliver clear and well-documented query outputs for each key question.
+#### 1.2.1 Project Objective 🎯
+This project seeks to analyze our business data in order to optimize performance, maximize revenue, and refine our customer experience. Your task is to deliver a comprehensive analysis and an interactive dashboard that will enable leadership to make well-informed decisions.
 
 #### 1.2.3 Key Deliverables 🔑
-- SQL Query Outputs: Provide the complete SQL scripts for each question, with clear comments explaining each step in the queries.
-- Business Insights Summary: Along with your queries, include brief summaries of your findings for each question. These summaries should offer straightforward insights that align with business needs.
-- Actionable Recommendations: Based on your insights, provide well-grounded recommendations for strategic actions or operational improvements.
-- Impact Analysis: For each area of analysis, assess potential impacts on revenue, customer satisfaction, and operational efficiency, clearly justifying recommendations based on data trends.
+- - An interactive dashboard (Power BI or Tableau) covering:
+  - Daily customer trends
+  - Peak hour visuals
+  - Average order size
+  - Bestsellers and underperformers
+  - Revenue breakdowns
+  - Seasonality charts
+  - Promotion recommendations
+-	An executive summary document (1–2 pages) highlighting the most important insights and strategic recommendations.
+
 
 [Click here](./problem%20statement/Project_Statement(NorthwindTraders).docx) to download the full problem statement for this project.
 
