@@ -28,13 +28,10 @@ This project seeks to analyze our business data in order to optimize performance
 [Click here](./problem_statement/Mania_Pizza_Project_Statement.docx) to download the full problem statement for this project.
 
 ---
+### 1.3 Dataset 📋 ⚠️
 
-## Project Overview 🌍 
-
-
-## Dataset 📋 
-
-The datasets contain a year's worth of order data detialed in the table below:
+The datasets contain a year's worth of order data, which is detailed in the table below:
+Alternatively, you can [Click here](./Datasets) to download all four datasets used for this project.
 
 | Tables        | Features            | Description                                                                                                                                                                       |
 |---------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
