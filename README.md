@@ -6,7 +6,7 @@
 <a href=#cont>Back to Project Structure</a>
 
 ### 1.1 Project Overview 📝 
-This project focuses on supporting Pizza Mania’s commitment to growth, operational excellence, and exceptional customer experience through data-driven decision-making. By analyzing business data, the goal is to uncover key insights, identify emerging trends, and highlight actionable opportunities to enhance performance, optimize operations, and drive strategic growth.
+This project focuses on supporting Pizza Mania’s commitment to growth, operational excellence, and exceptional customer experience through data-driven decision-making. This project provides a comprehensive exploratory data analysis (EDA) of a year's sales from `Pizza Mania`. By analyzing business data, the goal is to uncover key insights, identify emerging trends, and highlight actionable opportunities to enhance performance, optimize operations, and drive strategic growth. The dataset for the project includes details on each order, such as date and time, pizza type, size, quantity, price, and ingredients. Using Power BI, I explored customer behaviour, peak sales times, order trends, revenue, and potential areas for menu optimization and promotions.
 
 ### 1.2 Problem Statement ⚠️
 
@@ -28,13 +28,9 @@ This project seeks to analyze our business data in order to optimize performance
 [Click here](./problem%20statement/Project_Statement(NorthwindTraders).docx) to download the full problem statement for this project.
 
 ---
-An exploratory data analysis (EDA) of a world class pizza outlet called `Pizza Mania`.
-
-This project provides a comprehensive analysis of a year's worth of sales from a pizza outlet. The dataset includes details on each order, such as date and time, pizza type, size, quantity, price, and ingredients. Using Power BI, I explored customer behavior, peak sales times, order trends, revenue, and potential areas for menu optimization and promotions.
 
 ## Project Overview 🌍 
 
-The goal of this project is to uncover insights that can help improve sales and customer satisfaction at the pizza outlet. This analysis can guide business decisions, such as identifying peak hours, bestseller pizzas, and potential seasonal promotions. It also highlights data visualization techniques for deriving actionable insights from sales data.
 
 ## Dataset 📋 
 
