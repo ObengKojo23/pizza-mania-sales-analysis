@@ -25,7 +25,7 @@ This project seeks to analyze our business data in order to optimize performance
 -	An executive summary document (1–2 pages) highlighting the most important insights and strategic recommendations.
 
 
-[Click here](./problem%20statement/Project_Statement(NorthwindTraders).docx) to download the full problem statement for this project.
+[Click here](./problem%20statement/Mania_Pizza_Project_Statement.docx) to download the full problem statement for this project.
 
 ---
 
