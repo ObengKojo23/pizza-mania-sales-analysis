@@ -11,7 +11,7 @@
 
 <a href=#three>3. Loading, Cleaning & Transformation of Data (ETL Process)</a>
 
-<a href=#four>4. Summary</a>
+<a href=#four>4. Data Modelling</a>
 
 <a href=#five>5. Project Details</a>
 
@@ -82,7 +82,7 @@ This data allows for a deep dive into customer behaviour, order composition, and
 
 ### 3.1 Promote Row Headers 📝
 Promoting headers means ensuring that the column names of a dataset are recognized as the first row instead of data values.
-- During loading the four datasets, the `pizza_type table` had its header row as a data value and therefore, had to be promoted as a row header before loading it.
+- During loading the four datasets, the `pizza_type table` had its header row as a data value and, therefore, had to be promoted as a row header before loading it.
 
 ### 3.2 Rename Tables and Columns 📝 
 After loading each table, checks were made on the table and column naming format. 
@@ -90,7 +90,7 @@ After loading each table, checks were made on the table and column naming format
 - The observation was that both table and column names were in the `Snake Case` format (e.g., orders_table, order_details). I, therefore, renamed each of them to follow the standard and my preferred format for dashboard projects. For example, `orders_table` was renamed `Orders Table`, `order_details` --> `Order Details`.
 
 ### 3.3 Standardize Data Formats 📝
-After loading data into Power BI, standardising data formats is crucial to ensure accuracy, consistency, and compatibility for analysis and visualization. This ensures that Power BI does not misclassify data types (e.g., treating dates as text), facilitates accurate data modelling, enables reliable sorting and filtering, and finally ensures data consistency across the report.
+After loading data into Power BI, standardising data formats is crucial to ensure accuracy, consistency, and compatibility for analysis and visualization. This ensures that Power BI does not misclassify data types (e.g., treating dates as text), facilitates accurate data modelling, enables reliable sorting and filtering, and ensures data consistency across the report.
 
 - Each column was inspected to ensure the right data format. Fortunately, exploration indicated that all columns were in the right format.
 
@@ -102,14 +102,15 @@ Checking for null values in Power BI is crucial as it ensures data completeness,
 ---
 
 <a id="four"></a>
-## **🔍 3.  Data Modelling**
+## **🔍 4.  Data Modelling**
 <a href=#cont>Back to Project Structure</a>
 
-Data modelling in Power BI is the process of organizing data into tables and creating linked relationships or connecting them so that each table can easily communicate with each other for analysis and report creation.
+Data modelling is the process of organizing data into tables and creating linked relationships or connecting them so that each table can easily communicate for analysis and report creation.
 
+### 4.1 Creating Table Relationships 🔗 
 - I used the snowflake schema by organizing the data into `Fact` and `Dimension` tables. The fact table contains the key metrics or performance data, while the dimension tables store descriptive attributes related to those metrics. This structure helps optimize query performance and improves the clarity of relationships between data points, ensuring efficient analysis and reporting.
 
-  The table below shows the `Fact` and `Dimension` Tables
+  The table below shows the `Fact` and `Dimension` Tables.
 
   | Fact Table     | Dimension Tables   |
   |----------------|--------------------|
@@ -137,15 +138,17 @@ Data modelling in Power BI is the process of organizing data into tables and cre
   A screenshot of the final Table Relationship
   ![Data Modelling View](./images/data_modelling.png) 
 
-
-
-1. **How many customers do we have each day?**
-2. **Are there any peak hours?**
-3. **How many pizzas are typically in an order?**
-4. **Do we have any bestsellers?**
-5. **How much money did we make this year?**
-6. **Can we identify any seasonality in the sales?**
-7. **Are there any pizzas we should take off the menu, or any promotions we could leverage?**
+### 4.2 Creating Calculated Measures and Columns ➗
+The decision to create calculated measures and columns stems from the questions to be answered and the insights to be uncovered. 
+- I first created a measures table. I plan to store all my measures under this table for better organisation and easy accessibility.
+- All measures were created based on the under-listed questions
+  1. **How many customers do we have each day?**
+  3. **Are there any peak hours?**
+  4. **How many pizzas are typically in an order?**
+  5. **Do we have any bestsellers?**
+  6. **How much money did we make this year?**
+  7. **Can we identify any seasonality in the sales?**
+  8. **Are there any pizzas we should take off the menu or any promotions we could leverage?**
 
 
 ## Key Performance Indicators (KPIs) 🔑 
