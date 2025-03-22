@@ -81,25 +81,23 @@ This data allows for a deep dive into customer behaviour, order composition, and
 <a href=#cont>Back to Project Structure</a>
 
 ### 3.1 Promote Row Headers 📝
-Promoting headers means ensuring that the first row of a dataset is recognized as the column names instead of data values.
-During the loading of the four datasets, the `pizza_type table` had its header row as a data value and therefore, had to be promoted as a row header before loading it.
+Promoting headers means ensuring that the column names of a dataset are recognized as the first row instead of data values.
+- During loading the four datasets, the `pizza_type table` had its header row as a data value and therefore, had to be promoted as a row header before loading it.
 
 ### 3.2 Rename Tables and Columns 📝 
 After loading each table, checks were made on the table and column naming format. 
 
-The observation was that both table and column names were in the `Snake Case` format (e.g., orders_table, order_details). I, therefore, renamed each of them to follow the standard and my preferred format for dashboard projects. For example, `orders_table` was renamed `Orders Table`, `order_details` --> `Order Details`.
+- The observation was that both table and column names were in the `Snake Case` format (e.g., orders_table, order_details). I, therefore, renamed each of them to follow the standard and my preferred format for dashboard projects. For example, `orders_table` was renamed `Orders Table`, `order_details` --> `Order Details`.
 
 ### 3.3 Standardize Data Formats 📝
 After loading data into Power BI, standardising data formats is crucial to ensure accuracy, consistency, and compatibility for analysis and visualization. This ensures that Power BI does not misclassify data types (e.g., treating dates as text), facilitates accurate data modelling, enables reliable sorting and filtering, and finally ensures data consistency across the report.
 
-Each column was inspected to ensure the right data format. Fortunately, exploration indicated that all columns were in the right format.
+- Each column was inspected to ensure the right data format. Fortunately, exploration indicated that all columns were in the right format.
 
 ### 3.4 Handling Null Values  📝
 Checking for null values in Power BI is crucial as it ensures data completeness, prevents calculation errors, maintains accurate relationships, and improves visualization reliability.
-
-Under transform data mode, the data quality (`Valid, Error and Empty`) was inspected.
-
-The observation indicated no null values in the dataset as all `Valid` values were `100%`.
+- The data quality (`Valid, Error and Empty`) was inspected under transform data mode.
+- The observation indicated no null values in the dataset as all `Valid` values were `100%`.
 
 ---
 
@@ -111,33 +109,33 @@ Data modelling in Power BI is the process of organizing data into tables and cre
 
 - I used the snowflake schema by organizing the data into `Fact` and `Dimension` tables. The fact table contains the key metrics or performance data, while the dimension tables store descriptive attributes related to those metrics. This structure helps optimize query performance and improves the clarity of relationships between data points, ensuring efficient analysis and reporting.
 
-The table below shows the `Fact` and `Dimension` Tables
+  The table below shows the `Fact` and `Dimension` Tables
 
-| Fact Table     | Dimension Tables   |
-|----------------|--------------------|
-| Order Detials  | Pizza Type         | 
-|                | Orders             |
-|                | Pizzas             |
+  | Fact Table     | Dimension Tables   |
+  |----------------|--------------------|
+  | Order Detials  | Pizza Type         | 
+  |                | Orders             |
+  |                | Pizzas             |
 
 - I created a new `Date Table` (Calender Table) to the schema. This new Date table is important for more efficient and flexible time-based analysis during the analysis. 
 
-The below DAX formula was used to create the new Date Table.
-```sql
-
-Date = 
-ADDCOLUMNS(
-    CALENDAR(MIN(Orders[Order Date]), MAX(Orders[Order Date])),
-    "Year", YEAR([Date]),
-    "Month", FORMAT([Date], "mmm"),
-    "Month No", MONTH([Date]),
-    "Quarter", FORMAT([Date], "\QQ"),
-    "Day", FORMAT([Date], "ddd"),
-    "Day No", WEEKDAY([Date])
-)
-
-```
-A screenshot of the final Table Relationship
-![SQL to create the Database](./images/create_database.png)
+  The below DAX formula was used to create the new Date Table.
+  ```sql
+  
+  Date = 
+  ADDCOLUMNS(
+      CALENDAR(MIN(Orders[Order Date]), MAX(Orders[Order Date])),
+      "Year", YEAR([Date]),
+      "Month", FORMAT([Date], "mmm"),
+      "Month No", MONTH([Date]),
+      "Quarter", FORMAT([Date], "\QQ"),
+      "Day", FORMAT([Date], "ddd"),
+      "Day No", WEEKDAY([Date])
+  )
+  
+  ```
+  A screenshot of the final Table Relationship
+  ![Data Modelling View](./images/data_modelling.png) 
 
 
 
