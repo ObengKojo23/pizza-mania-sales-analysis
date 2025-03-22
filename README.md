@@ -133,7 +133,7 @@ Data modelling is the process of organizing data into tables and creating linked
       "Day", FORMAT([Date], "ddd"),
       "Day No", WEEKDAY([Date])
   )
-  
+ 
   ```
   A screenshot of the final Table Relationship
   ![Data Modelling View](./images/data_modelling.png) 
@@ -149,7 +149,40 @@ The decision to create calculated measures and columns stems from the questions 
   6. **How much money did we make this year?**
   7. **Can we identify any seasonality in the sales?**
   8. **Are there any pizzas we should take off the menu or any promotions we could leverage?**
+- Below is the list of all calculated measures and columns created
+  
+  1. Number of Customers (calculated measure)
+  ```sql
+   Number of Customers = DISTINCTCOUNT(Order_Details[Order ID])
+   ```
+  Since the dataset does not include a customer table, counting the distinct orders from the order_details table would be the best way to answer the first question, `How many customers do we have each day?`.
 
+  2. Number of Customers (calculated column)
+   ```sql
+    Number of Customers = DISTINCTCOUNT(Order_Details[Order ID])
+    ```
+   Inspecting the tables indicates a `Time Column` in the `Orders Table`. Further inspection shows that the `Minimum Time` = 9:52:21 and `Maximum Time` = 23:05:52, which means that I can create a time interval slot from 9 AM to 12 PM to answer the question, `Are there any peak hours?` This will help sort varied timeframes for peak hours analysis.
+  
+  
+  2. Total Sales (calculated measure)
+
+  ```sql
+  
+  Total Sales = 
+  SUMX(
+      'Order_Details',
+      'Order_Details'[Order Quantity] * RELATED(Pizzas[Pizza Price])
+      )
+ 
+  ```
+  1. Number of Customers (calculated measure)
+  ```sql
+   Number of Customers = DISTINCTCOUNT(Order_Details[Order ID])
+   ```
+  Since the dataset does not include a customer table, counting the distinct orders from the order_details table would be the best way to answer the first question, `How many customers do we have each day?`.
+ 
+ 
+  
 
 ## Key Performance Indicators (KPIs) 🔑 
 
