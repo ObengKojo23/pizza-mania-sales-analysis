@@ -1,6 +1,21 @@
 ![Banner Image](./images/banner_image.png)
 # 🍕 Pizza Mania Sales Analysis 🍕
+---
+<a id="cont"></a>
 
+### **Project Structure**
+
+<a href=#one>1. Introduction</a>
+
+<a href=#two>2. Data Exploration and Preparation</a>
+
+<a href=#three>3. Business Questions and Analysis</a>
+
+<a href=#four>4. Summary</a>
+
+<a href=#five>5. Project Details</a>
+
+---
  <a id="one"></a>
 ## **🌍 1. Introduction**
 <a href=#cont>Back to Project Structure</a>
@@ -28,16 +43,21 @@ This project seeks to analyze our business data in order to optimize performance
 [Click here](./problem_statement/Mania_Pizza_Project_Statement.docx) to download the full problem statement for this project.
 
 ---
-### 1.3 Dataset 📋 ⚠️
+<a id="two"></a>
+## **📋 2.  Data Collection & Extraction**
+<a href=#cont>Back to Project Structure</a>
 
-The datasets contain a year's worth of order data, which is detailed in the table below:
-Alternatively, you can [Click here](./Datasets) to download all four datasets used for this project.
+The datasets for this project contain a year's worth of pizza sales orders from `Pizza Mania`. The extracted datasets came in four separate `CSV` formats, which are detailed in the table below:
 
-| Tables        | Features            | Description                                                                                                                                                                       |
+To access all four datasets for the project, [Click here](./Datasets) to download. 
+
+All four original datasets were downloaded from [Maven Analytics](https://www.mavenanalytics.io/data-playground?dataStructure=Multiple%20tables&order=date_added%2Cdesc&page=4&pageSize=5).
+
+| Datasets        | Features            | Description                                                                                                                                                                       |
 |---------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | orders        | order_id         | Unique identifier for each order placed by a table                                                                                                                                |
-|               | date             | Date the order was placed (entered into the system prior to cooking & serving)                                                                                                    |
-|               | time             | Time the order was placed (entered into the system prior to cooking & serving)                                                                                                    |
+|               | date             | Date the order was placed (entered into the system before cooking & serving)                                                                                                    |
+|               | time             | Time the order was placed (entered into the system before cooking & serving)                                                                                                    |
 | order_details | order_details_id | Unique identifier for each pizza placed within each order (pizzas of the same type and size are kept in the same row, and the quantity increases)                                 |
 |               | order_id         | Foreign key that ties the details in each order to the order itself                                                                                                               |
 |               | pizza_id         | Foreign key that ties the pizza ordered to its details, like size and price                                                                                                       |
@@ -48,27 +68,20 @@ Alternatively, you can [Click here](./Datasets) to download all four datasets us
 |               | price            | Price of the pizza in USD                                                                                                                                                         |
 | pizza_types   | pizza_type_id    | Unique identifier for each pizza type                                                                                                                                             |
 |               | name             | Name of the pizza as shown in the menu                                                                                                                                            |
-|               | category         | Category that the pizza fall under in the menu (Classic, Chicken, Supreme, or Veggie)                                                                                             |
+|               | category         | Category that the pizza falls under in the menu (Classic, Chicken, Supreme, or Veggie)                                                                                             |
 |               | ingredients      | Comma-delimited ingredients used in the pizza as shown in the menu (they all include Mozzarella Cheese, even if not specified; and they all include Tomato Sauce, unless specified) |
 
-This data allows for a deep dive into customer behavior, order composition, and revenue generation over time.
+This data allows for a deep dive into customer behaviour, order composition, and revenue generation over time.
+
+
 
 ---
 
-### How to Run This Project 🚀 
+<a id="one"></a>
+## **🔍 2.  Exploratory Data Analysis**
+<a href=#cont>Back to Project Structure</a>
 
-1. **Clone the Repository**  
-   Run the following command to clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/ObengKojo23/pizza-sales-analysis.git
-2. **Download Power BI Desktop**  
-   You can download Power BI Desktop from the official Microsoft website: [Download Power BI Desktop](https://powerbi.microsoft.com/desktop/).
-3. **Load the dataset**
-   Load all the dataset into Power BI to explore the interactive dashboard.
-
-
-## Exploratory Analysis 🔍
-
+### 2.1 Project Overview 📝 
 The following questions were addressed using the dataset:
 
 1. **How many customers do we have each day?**
@@ -112,7 +125,16 @@ These KPIs were selected to provide a comprehensive view of the pizza mania’s 
 This project offers valuable insights into the pizza outlet's sales dynamics, helping to inform business decisions on menu design, promotion strategies, and operational efficiency. The analysis is also a showcase of Power BI’s potential for transforming raw data into actionable insights, a skillset valuable in various industries.
 
 ---
+### How to Run This Project 🚀 
 
+1. **Clone the Repository**  
+   Run the following command to clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/ObengKojo23/pizza-sales-analysis.git
+2. **Download Power BI Desktop**  
+   You can download Power BI Desktop from the official Microsoft website: [Download Power BI Desktop](https://powerbi.microsoft.com/desktop/).
+3. **Load the dataset**
+   Load all the dataset into Power BI to explore the interactive dashboard.
 
 ## Tools and Technologies Used 🛠 
 
