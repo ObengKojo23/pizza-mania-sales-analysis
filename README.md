@@ -157,9 +157,17 @@ The decision to create calculated measures and columns stems from the questions 
    ```
   Since the dataset does not include a customer table, counting the distinct orders from the order_details table would be the best way to answer the first question, `How many customers do we have each day?`.
 
-  2. Number of Customers (calculated column)
+  2. Time Interval Slot (calculated column)
    ```sql
-    Number of Customers = DISTINCTCOUNT(Order_Details[Order ID])
+    Time Interval Sort = 
+    SWITCH(
+        TRUE(),
+        Orders[Order Time] >= TIME(9,0,0) && Orders[Order Time] <= TIME(12,0,0), 1,
+        Orders[Order Time] >= TIME(12,0,0) && Orders[Order Time] <= TIME(15,0,0), 2,
+        Orders[Order Time] >= TIME(15,0,0) && Orders[Order Time] <= TIME(18,0,0), 3,
+        Orders[Order Time] >= TIME(18,0,0) && Orders[Order Time] <= TIME(21,0,0), 4,
+        Orders[Order Time] >= TIME(21,0,0) && Orders[Order Time] <= TIME(23,59,59), 5
+    )
     ```
    Inspecting the tables indicates a `Time Column` in the `Orders Table`. Further inspection shows that the `Minimum Time` = 9:52:21 and `Maximum Time` = 23:05:52, which means that I can create a time interval slot from 9 AM to 12 PM to answer the question, `Are there any peak hours?` This will help sort varied timeframes for peak hours analysis.
   
