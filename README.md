@@ -13,7 +13,7 @@
 
 <a href=#four>4. Data Modelling</a>
 
-<a href=#five>5. Project Details</a>
+<a href=#five>5. Data Report & Visualisaition</a>
 
 ---
  <a id="one"></a>
@@ -218,7 +218,7 @@ The decision to create calculated measures and columns stems from the questions 
 
    ## Calculated Columns
 
-   ### 5. To determine whether there were any peak hours, I needed to create two new calculated columns. 
+   ### 6. To determine whether there were any peak hours, I needed to create two new calculated columns. 
     - I had to make use of the time column under Orders Table
     - Sorting the time column descending and ascending respectively indicated that the `MINIMUM` time was `9:52:21` and the `MAXIMUM` time was `23:05:52`.
     - From this observation, I decided to calculate Time Intervals from `9:00 PM` to `12:00 PM`.
@@ -247,7 +247,17 @@ The decision to create calculated measures and columns stems from the questions 
          Orders[Order Time] >= TIME(21,0,0) && Orders[Order Time] <= TIME(23,59,59), 5
      )
      ```
-   
+<a id="five"></a>
+## **🔍 5.  Data Report & Visualisaition**
+<a href=#cont>Back to Project Structure</a>
+
+This is where I jumped to the report view and created all the visuals to answer key questions and give further insights to the CEO of Mania Pizza.
+- `Cards`: Was used to display key metrics (Total Sales, Total Orders, Number of Customers, Average Pizzas Per Order and Average Orders Per Day).
+- `Line Chart`: Was used to show trends over time (Quarterly, Monthly and Daily sales).
+`Bar/Column Charts` Were used to show The Peak Hours and compare Pizza Orders (Quarterly, Monthly and Daily sales).
+- `Pie Charts`: Were used to visualise the distribution of Favorite Pizza Categories ((Classic, Supreme, Veggie, and Chicken) and Favorite Pizza Sizes (XL, L, M, and S).
+- `Tables`: Was used to Provide detailed breakdowns of The Top 10 Best Selling Pizzas and Bottom 10 Worst Selling Pizzas.
+- `Slicers`: I used four slicers (Pizza Category, Pizza Size, Month, and Day/Date) to allow for filtering the data by specific Pizza size and category, Month, Day and Date of sales.
   
 
 ## Key Performance Indicators (KPIs) 🔑 
