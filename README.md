@@ -81,18 +81,18 @@ This data allows for a deep dive into customer behaviour, order composition, and
 <a href=#cont>Back to Project Structure</a>
 
 ### 3.1 Promote Row Headers 📝
-Promoting headers means ensuring that the column names of a dataset are recognized as the first row instead of data values.
+Promoting headers means ensuring that a dataset's column names are recognized as the first row instead of data values.
 - During loading the four datasets, the `pizza_type table` had its header row as a data value and, therefore, had to be promoted as a row header before loading it.
 
 ### 3.2 Rename Tables and Columns 📝 
-After loading each table, checks were made on the table and column naming format. 
+After loading each table, checks were made on the table's and columns' naming format. 
 
-- The observation was that both table and column names were in the `Snake Case` format (e.g., orders_table, order_details). I, therefore, renamed each of them to follow the standard and my preferred format for dashboard projects. For example, `orders_table` was renamed `Orders Table`, `order_details` --> `Order Details`.
+- The observation was that both table and column names were in the `Snake Case` format (e.g., orders_table, order_details). I, therefore, renamed each of them to follow the standard and my preferred format for dashboard projects. For example, `orders_table` was renamed `Orders_Table`, `order_details` --> `Order_Details`.
 
 ### 3.3 Standardize Data Formats 📝
 After loading data into Power BI, standardising data formats is crucial to ensure accuracy, consistency, and compatibility for analysis and visualization. This ensures that Power BI does not misclassify data types (e.g., treating dates as text), facilitates accurate data modelling, enables reliable sorting and filtering, and ensures data consistency across the report.
 
-- Each column was inspected to ensure the right data format. Fortunately, exploration indicated that all columns were in the right format.
+- Each column was inspected to ensure the correct data format. Fortunately, exploration indicated that all columns were in the proper format.
 
 ### 3.4 Handling Null Values  📝
 Checking for null values in Power BI is crucial as it ensures data completeness, prevents calculation errors, maintains accurate relationships, and improves visualization reliability.
@@ -144,20 +144,80 @@ The decision to create calculated measures and columns stems from the questions 
 - All measures were created based on the under-listed questions
   1. **How many customers do we have each day?**
   3. **Are there any peak hours?**
-  4. **How many pizzas are typically in an order?**
+  4. **How many pizzas are typically in an order?** 📝
   5. **Do we have any bestsellers?**
   6. **How much money did we make this year?**
   7. **Can we identify any seasonality in the sales?**
   8. **Are there any pizzas we should take off the menu or any promotions we could leverage?**
 - Below is the list of all calculated measures and columns created
   
-  1. Number of Customers (calculated measure)
+  ## Calculated Measures
+  
+  ### 1.  To calculate `How many customers for each day`.
   ```sql
    Number of Customers = DISTINCTCOUNT(Order_Details[Order ID])
-   ```
-  Since the dataset does not include a customer table, counting the distinct orders from the order_details table would be the best way to answer the first question, `How many customers do we have each day?`.
+  ```
+  #### Explanation of Measure
+   - I used this measure to count the number of unique Order ID values in the Order_Details table, which essentially gives the number of unique customer transactions (i.e., the number of unique orders).
+   - Since the datasets had no Customer table, I used the `Order ID` as a proxy for unique customers, keeping in mind that this measure will give the count of distinct orders but not necessarily distinct customers if multiple orders are placed by the same customer.
+     
 
-  2. Time Interval Slot (calculated column)
+  ### 2.  To calculate the `The Average Orders Per Day`.
+ 
+  This gives the average orders per active order day, excluding days without orders.
+   ```sql
+    Average Orders Per Day = 
+    DIVIDE(
+        DISTINCTCOUNT(Order_Details[Order ID]),
+        DISTINCTCOUNT(Orders[Order Date]),
+        0
+    )
+   ```
+  #### Explanation of Measure
+   - `DISTINCTCOUNT(Order_Details[Order ID])` This counts the unique orders from the Order_detials Table.
+   - `DISTINCTCOUNT(Orders[Order Date])` Then this counts the unique days with orders.
+   - To ensure that there is no division by zero errors, I used `DIVIDE(..., 0)`.
+
+   
+  ### 3. To calculate the `The Average Number of Pizzas in each Day`.
+   ```sql
+   Average Pizzas Per Order =
+    DIVIDE(
+      SUM(Order_Details[Order Quantity]), 
+      DISTINCTCOUNT(Order_Details[Order ID]), 
+      0
+   )
+   ```
+   #### Explanation of the Measure
+    - `SUM(Order_Details[Order Quantity])`: This extracts the total number of pizzas ordered.
+    - `DISTINCT COUNT (Order_Details[Order ID])` This will count the unique orders that were made.
+    - To ensure that there is no division by zero errors, I used `DIVIDE(..., 0)`.
+
+  ### 4. To calculate the `The Total Orders`.
+   ```sql
+     Total Orders = SUM(Order_Details[Order Quantity])
+   ```
+   #### Explanation of the Measure
+    - `Order_Details[Order Quantity]`: This references the Order Quantity column in the Order_Details table that contains the number of pizzas ordered in each transaction.
+    -  The `SUM` function is then used to sum up all the values in the Order Quantity Column.
+    -  In summary, the measure calculates the total number of pizzas ordered by adding all values in the Order Quantity column across all rows in the Order_Details table.
+
+  ### 5. To calculate the `The Total Sales`.
+     ```sql
+     
+     Total Sales = 
+     SUMX(
+         'Order_Details',
+         'Order_Details'[Order Quantity] * RELATED(Pizzas[Pizza Price])
+         )
+     ```
+  #### Explanation of the Measure
+     - `SUMX`: is used to iterate over the 'Order_Details' table. Then, multiply the order quantity by the pizza price (From the Pizza table) for each row.
+     - The measure using the iteration then sums up the values to calculate the total sales for all orders.
+     - In summary, the measure calculates the total revenue by multiplying the number of pizzas ordered by their prices and sums the results.
+
+   ## Calculated Columns
+   2. Time Interval Slot (calculated column)
    ```sql
     Time Interval Sort = 
     SWITCH(
@@ -169,20 +229,8 @@ The decision to create calculated measures and columns stems from the questions 
         Orders[Order Time] >= TIME(21,0,0) && Orders[Order Time] <= TIME(23,59,59), 5
     )
     ```
-   Inspecting the tables indicates a `Time Column` in the `Orders Table`. Further inspection shows that the `Minimum Time` = 9:52:21 and `Maximum Time` = 23:05:52, which means that I can create a time interval slot from 9 AM to 12 PM to answer the question, `Are there any peak hours?` This will help sort varied timeframes for peak hours analysis.
+   
   
-  
-  2. Total Sales (calculated measure)
-
-  ```sql
-  
-  Total Sales = 
-  SUMX(
-      'Order_Details',
-      'Order_Details'[Order Quantity] * RELATED(Pizzas[Pizza Price])
-      )
- 
-  ```
   1. Number of Customers (calculated measure)
   ```sql
    Number of Customers = DISTINCTCOUNT(Order_Details[Order ID])
