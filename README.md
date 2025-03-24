@@ -262,10 +262,16 @@ This is where I jumped to the report view and created all the visuals to answer 
 ### Below is a short video visual demonstration of the Dashboard for the Report.
 ![Gif image of the Final Dashboard](./images/dashboard_gif.gif)
 
-### Below are screenshots of the final Dashboard for the Report.
+Screenshot 1
 ![image 1](./images/dashboard_1.png)
+
+Screenshot 2
 ![image 1](./images/dashboard_2.png)
+
+Screenshot 3
 ![image 1](./images/dashboard_3.png)
+
+Screenshot 4
 ![image 1](./images/dashboard_4.png)
   
 
