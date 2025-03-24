@@ -162,9 +162,7 @@ The decision to create calculated measures and columns stems from the questions 
    - Since the datasets had no Customer table, I used the `Order ID` as a proxy for unique customers, keeping in mind that this measure will give the count of distinct orders but not necessarily distinct customers if multiple orders are placed by the same customer.
      
 
-  ### 2.  To calculate the `The Average Orders Per Day`.
- 
-  This gives the average orders per active order day, excluding days without orders.
+  ### 2.  To calculate the `The Average Orders Per Day`. 
    ```sql
     Average Orders Per Day = 
     DIVIDE(
@@ -179,7 +177,7 @@ The decision to create calculated measures and columns stems from the questions 
    - To ensure that there is no division by zero errors, I used `DIVIDE(..., 0)`.
 
    
-  ### 3. To calculate the `The Average Number of Pizzas in each Day`.
+  ### 3. To calculate the `The Average Number of Pizzas Per Order`.
    ```sql
    Average Pizzas Per Order =
     DIVIDE(
@@ -190,7 +188,8 @@ The decision to create calculated measures and columns stems from the questions 
    ```
    #### Explanation of the Measure
     - `SUM(Order_Details[Order Quantity])`: This extracts the total number of pizzas ordered.
-    - `DISTINCT COUNT (Order_Details[Order ID])` This will count the unique orders that were made.
+    - `DISTINCT COUNT (Order_Details[Order ID])` This will count the unique orders made based on the Order ID and ensure that each order is only counted once, even if there are multiple pizzas in a single order.
+    - The `DIVIDE` function is used to perform the division.
     - To ensure that there is no division by zero errors, I used `DIVIDE(..., 0)`.
 
   ### 4. To calculate the `The Total Orders`.
@@ -212,32 +211,43 @@ The decision to create calculated measures and columns stems from the questions 
          )
      ```
   #### Explanation of the Measure
-     - `SUMX`: is used to iterate over the 'Order_Details' table. Then, multiply the order quantity by the pizza price (From the Pizza table) for each row.
+     - `SUMX` was used to iterate over the 'Order_Details' table. Then, multiply the order quantity by the pizza price (From the Pizza table) for each row.
      - The measure using the iteration then sums up the values to calculate the total sales for all orders.
      - In summary, the measure calculates the total revenue by multiplying the number of pizzas ordered by their prices and sums the results.
+       
 
    ## Calculated Columns
-   2. Time Interval Slot (calculated column)
-   ```sql
-    Time Interval Sort = 
-    SWITCH(
-        TRUE(),
-        Orders[Order Time] >= TIME(9,0,0) && Orders[Order Time] <= TIME(12,0,0), 1,
-        Orders[Order Time] >= TIME(12,0,0) && Orders[Order Time] <= TIME(15,0,0), 2,
-        Orders[Order Time] >= TIME(15,0,0) && Orders[Order Time] <= TIME(18,0,0), 3,
-        Orders[Order Time] >= TIME(18,0,0) && Orders[Order Time] <= TIME(21,0,0), 4,
-        Orders[Order Time] >= TIME(21,0,0) && Orders[Order Time] <= TIME(23,59,59), 5
-    )
+
+   ### 5. To determine whether there were any peak hours, I needed to create two new calculated columns. 
+    - I had to make use of the time column under Orders Table
+    - Sorting the time column descending and ascending respectively indicated that the `MINIMUM` time was `9:52:21` and the `MAXIMUM` time was `23:05:52`.
+    - From this observation, I decided to calculate Time Intervals from `9:00 PM` to `12:00 PM`.
+    - The Time Interval Sort column was created to allow me to easily aggregate the time intervals.
+
+    ```sql
+     Time Intervals = 
+     SWITCH(
+         TRUE(),
+         Orders[Order Time] >= TIME(9,0,0) && Orders[Order Time] <= TIME(12,0,0), "9 - 12 AM",
+         Orders[Order Time] >= TIME(12,0,0) && Orders[Order Time] <= TIME(15,0,0), "12 - 3 PM",
+         Orders[Order Time] >= TIME(15,0,0) && Orders[Order Time] <= TIME(18,0,0), "3 - 6 PM",
+         Orders[Order Time] >= TIME(18,0,0) && Orders[Order Time] <= TIME(21,0,0), "6 - 9 PM",
+         Orders[Order Time] >= TIME(21,0,0) && Orders[Order Time] <= TIME(23,59,59), "9 - 12 PM"
+     )
     ```
+    
+    ```sql
+     Time Interval Sort = 
+     SWITCH(
+         TRUE(),
+         Orders[Order Time] >= TIME(9,0,0) && Orders[Order Time] <= TIME(12,0,0), 1,
+         Orders[Order Time] >= TIME(12,0,0) && Orders[Order Time] <= TIME(15,0,0), 2,
+         Orders[Order Time] >= TIME(15,0,0) && Orders[Order Time] <= TIME(18,0,0), 3,
+         Orders[Order Time] >= TIME(18,0,0) && Orders[Order Time] <= TIME(21,0,0), 4,
+         Orders[Order Time] >= TIME(21,0,0) && Orders[Order Time] <= TIME(23,59,59), 5
+     )
+     ```
    
-  
-  1. Number of Customers (calculated measure)
-  ```sql
-   Number of Customers = DISTINCTCOUNT(Order_Details[Order ID])
-   ```
-  Since the dataset does not include a customer table, counting the distinct orders from the order_details table would be the best way to answer the first question, `How many customers do we have each day?`.
- 
- 
   
 
 ## Key Performance Indicators (KPIs) 🔑 
