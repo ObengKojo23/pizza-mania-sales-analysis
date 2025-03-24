@@ -259,7 +259,7 @@ This is where I jumped to the report view and created all the visuals to answer 
 - `Tables`: Was used to Provide detailed breakdowns of The Top 10 Best Selling Pizzas and Bottom 10 Worst Selling Pizzas.
 - `Slicers`: I used four slicers (Pizza Category, Pizza Size, Month, and Day/Date) to allow for filtering the data by specific Pizza size and category, Month, Day and Date of sales.
 
-### Below is a short video visual demonstration of the Dashboard for the Report.
+Below is a short video visual demonstration of the Dashboard for the Report.
 ![Gif image of the Final Dashboard](./images/dashboard_gif.gif)
 
 Screenshot 1
