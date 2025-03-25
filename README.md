@@ -328,6 +328,7 @@ This Power BI-driven analysis of Pizza Mania sales provides valuable insights in
 - **Time-Based Analysis:** Examining sales variations by day, month, and quarter.  
 
 With these insights, Pizza Mania can optimize inventory management, refine marketing strategies, and enhance customer satisfaction. The interactive Power BI dashboard ensures continuous monitoring and data exploration, allowing for ongoing strategic improvements in sales operations.
+
 ---
 
 <a id="Seven"></a>
