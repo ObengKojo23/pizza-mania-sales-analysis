@@ -32,6 +32,26 @@ This project seeks to analyze our business data in order to optimize performance
 [Click here](./problem_statement/Mania_Pizza_Project_Statement.docx) to download the full problem statement for this project.
 
 ---
+
+<a id="cont"></a>
+
+### **Project Structure**
+
+<a href=#one>1. Introduction</a>
+
+<a href=#two>2. Data Collection & Extraction</a>
+
+<a href=#three>3. Loading, Cleaning & Transformation of Data (ETL Process)</a>
+
+<a href=#four>4. Data Modelling</a>
+
+<a href=#five>5. Data Report & Visualisaition</a>
+
+<a href=#six>6. Executive Summary and Conclusion</a>
+
+<a href=#seven>7. Project Details</a>
+
+---
 <a id="two"></a>
 ## **📋 2.  Data Collection & Extraction**
 <a href=#cont>Back to Project Structure</a>
@@ -265,10 +285,14 @@ Screenshot 4
   
 
 <a id="Six"></a>
-## **🔍 6. Executive Summary**
+## **🔚 6. Executive Summary and Conclusion**
 <a href=#cont>Back to Project Structure</a>
 
-## Key Performance Indicators (KPIs) 🔑 
+### 6.1 Executive Summary 
+
+ [Click here](./problem_statement/Mania_Pizza_Project_Statement.docx) to download the complete executive summary document highlighting the most important insights and strategic recommendations for Pizza Mania.
+ 
+#### Key Performance Indicators (KPIs) 🔑 
 
 The following KPIs were identified to measure the performance and trends in sales at Pizza Mania. These KPIs help uncover insights into customer behaviour and sales patterns:
 
@@ -292,15 +316,47 @@ The following KPIs were identified to measure the performance and trends in sale
   
 - **`Sales Margin by Pizza Type:`** Tracks the margin of each pizza type, supporting decisions on pricing adjustments or cost-cutting.
 
-
 These KPIs were selected to provide a comprehensive view of Pizza Mania’s sales dynamics, customer preferences, and overall performance. They guide decision-making to optimize sales, enhance customer satisfaction, and increase profitability.
 
-## Conclusion 📝
+### 6.2 Conclusion 
+This Power BI-driven analysis of Pizza Mania sales provides valuable insights into customer behaviour, sales performance, and product popularity. By leveraging well-structured data modelling, dynamic DAX measures, and interactive visualizations, the project enables Pizza Mania's CEO to make informed business decisions based on data-driven evidence.  
 
-This project offers valuable insights into the pizza outlet's sales dynamics, helping to inform business decisions on menu design, promotion strategies, and operational efficiency.
+#### Key findings from the analysis include:  
+- **Sales Performance:** Tracking total revenue, order trends, and peak sales periods.  
+- **Customer Insights:** Understanding daily customer activity and purchasing patterns.  
+- **Product Trends:** Identifying the most popular pizza types, sizes, and categories.  
+- **Time-Based Analysis:** Examining sales variations by day, month, and quarter.  
+
+With these insights, Pizza Mania can optimize inventory management, refine marketing strategies, and enhance customer satisfaction. The interactive Power BI dashboard ensures continuous monitoring and data exploration, allowing for ongoing strategic improvements in sales operations.
+---
+
+<a id="Seven"></a>
+## **🔚 7. Project Details**
+<a href=#cont>Back to Project Structure</a>
+### 7.1 Tools and Technologies Used 🛠
+- **Power BI Desktop**: The primary tool for data visualization and analysis.
+- **DAX (Data Analysis Expressions)**: Used for calculations and data manipulation.
+- **Power Query**: For data transformation and cleansing.
+- **Power BI Service**: For sharing reports and dashboards.
+- **GitHub**: For version control and collaboration on project files, including sharing the Power BI reports and documentation.
+- **Data Sources**: Excel spreadsheets.
+- **Visualization Types**: Bar charts, line graphs, pie charts, tables, and cards.
+- **Markdown:** Used for project documentation, including README files, to enhance clarity and structure for this final report.
+
+### 7.2 Skills Employed 🧠 
+- **Power BI Data Modeling:** Structured data using a **snowflake schema**, defining **fact and dimension tables** to support efficient data analysis and visualization.
+- **DAX Measures and Calculations:** Created **calculated measures** using DAX functions such as `SUMX()`, `DISTINCTCOUNT()`, and `RELATED()` to analyze sales, customer count, and revenue.
+- **Customer Segmentation:** Analyzed purchasing patterns, order frequency, and sales contribution to categorize customers and identify high-value buyers.
+- **Product Performance Analysis:** Identified **top-selling pizza types, categories, and sizes** to help optimize stock and menu offerings.
+- **Time-Series Analysis:** Evaluated sales trends by **day, month, and quarter**, identifying peak sales periods and seasonal patterns.
+- **Business Intelligence & Decision Support:** Provided actionable insights on **customer behavior, sales trends, and product demand** to inform strategic decisions.
+- **Interactive Dashboard Development:** Designed a **Power BI dashboard** with **cards, bar charts, pie charts, line charts, tables, and slicers** for real-time data exploration.
+- **Data Filtering and Drill-through Analysis:** Implemented **cross-filtering, slicers, and drill-through features** for interactive and detailed reporting.
+- **Project Documentation:** Documented **data preparation, DAX measures, insights, and visualization processes** for clarity and reproducibility.
 
 ---
-### How to Run This Project 🚀 
+
+### 7.3 How to Run This Project 🚀 
 
 1. **Clone the Repository**  
    Run the following command to clone the repository to your local machine:
@@ -309,26 +365,31 @@ This project offers valuable insights into the pizza outlet's sales dynamics, he
 2. **Download Power BI Desktop**  
    You can download Power BI Desktop from the official Microsoft website: [Download Power BI Desktop](https://powerbi.microsoft.com/desktop/).
 3. **Load the dataset**
-   Load all the dataset into Power BI to explore the interactive dashboard.
+   Load all the datasets into Power BI to explore the interactive dashboard.
+--- 
 
-## Tools and Technologies Used 🛠 
-
-- **Power BI Desktop**: The primary tool for data visualization and analysis.
-- **DAX (Data Analysis Expressions)**: Used for calculations and data manipulation.
-- **Power Query**: For data transformation and cleansing.
-- **Power BI Service**: For sharing reports and dashboards.
-- **GitHub**: For version control and collaboration on project files, including sharing the Power BI reports and documentation.
-- **Data Sources**: Excel spreadsheets.
-- **Visualization Types**: Bar charts, line graphs, pie charts, tables, and cards.
-
-## File Structure 💾
+### 7.4 File Structure 💾
 
 - `Data/`: Contains the datasets for analysis.
 - `Dashboard/`: Power BI file for the dashboard.
 - `README.md`: Project overview and documentation.
 - `LICENSE`: The project is licensed under the Apache License 2.0.
+---
 
-## Acknowledgments 👏
-- **Maven Analytics** for providing the [Pizza Sales dataset](https://www.mavenanalytics.io/data-playground?dataStructure=Multiple%20tables&order=date_added%2Cdesc&page=4&pageSize=5).
-- **Power BI Community** for visualization inspiration and dashboarding techniques.
-- **Pizza Icons**: Pizza icon used in the project was created by [Freepik - Flaticon](https://www.flaticon.com/free-icons/pizza).
+### 7.5 References
+1. **Maven Analytics** for providing the [Pizza Sales dataset](https://www.mavenanalytics.io/data-playground?dataStructure=Multiple%20tables&order=date_added%2Cdesc&page=4&pageSize=5).
+2. **Power BI Community** for visualization inspiration and dashboarding techniques.
+3. **Pizza Icons**: Pizza icon used in the project was created by [Freepik - Flaticon](https://www.flaticon.com/free-icons/pizza).
+4. Original Banner image sourced from [FreePik](https://www.freepik.com) and redesigned by me `(ObengKojo)`.
+
+---
+
+## Contact
+For any questions or suggestions, feel free to reach out:
+
+- **LinkedIn**: [LinkedIn Page](https://www.linkedin.com/in/obengafari)
+- **GitHub**: [GitHub page](https://github.com/ObengKojo23)
+- **YouTube**: [My YouTube tutorials](https://youtube.com/@obengkojo)
+---
+
+
