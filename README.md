@@ -370,8 +370,10 @@ With these insights, Pizza Mania can optimize inventory management, refine marke
 
 ### 7.4 File Structure 💾
 
-- `Data/`: Contains the datasets for analysis.
 - `Dashboard/`: Power BI file for the dashboard.
+- `Datasets/`: Contains the datasets for analysis.
+- `Docs/`: Word documents for the Problem Statement and Executive Summary of the project.
+- `images/`: Banner image, Final dashboard images and gif file.   
 - `README.md`: Project overview and documentation.
 - `LICENSE`: The project is licensed under the Apache License 2.0.
 ---
