@@ -290,7 +290,7 @@ Screenshot 4
 
 ### 6.1 Executive Summary 
 
- [Click here](./Docs/Executive_Statement.docx) to download the complete executive summary document highlighting the most important insights and strategic recommendations for Pizza Mania.
+ [Click here](./Docs/Executive_Summary.docx) to download the complete executive summary document highlighting the most important insights and strategic recommendations for Pizza Mania.
  
 #### Key Performance Indicators (KPIs) 🔑 
 
