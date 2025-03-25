@@ -1,11 +1,7 @@
 ![Banner Image](./images/banner_image.png)
 # 🍕 Pizza Mania Sales Analysis 🍕
 ---
-<a id="cont"></a>
-
-
----
- <a id="one"></a>
+<a id="one"></a>
 ## **🌍 1. Introduction**
 <a href=#cont>Back to Project Structure</a>
 
