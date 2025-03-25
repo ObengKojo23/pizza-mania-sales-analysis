@@ -86,7 +86,7 @@ This data allows for a deep dive into customer behaviour, order composition, and
 ---
 
 <a id="three"></a>
-## **🔍 3.  Loading, Cleaning & Transformation of Data (ETL Process)**
+## **⏳ 3.  Loading, Cleaning & Transformation of Data (ETL Process)**
 <a href=#cont>Back to Project Structure</a>
 
 ### 3.1 Promote Row Headers 📝
@@ -111,7 +111,7 @@ Checking for null values in Power BI is crucial as it ensures data completeness,
 ---
 
 <a id="four"></a>
-## **🔍 4.  Data Modelling**
+## **📐 4.  Data Modelling**
 <a href=#cont>Back to Project Structure</a>
 
 Data modelling is the process of organizing data into tables and creating linked relationships or connecting them so that each table can easily communicate for analysis and report creation.
@@ -257,7 +257,7 @@ The decision to create calculated measures and columns stems from the questions 
      )
      ```
 <a id="five"></a>
-## **🔍 5.  Data Report & Visualisaition**
+## **📊 5.  Data Report & Visualisaition**
 <a href=#cont>Back to Project Structure</a>
 
 This is where I jumped to the report view and created all the visuals to answer key questions and give further insights to the CEO of Pizza Mania.
@@ -290,7 +290,7 @@ Screenshot 4
 
 ### 6.1 Executive Summary 
 
- [Click here](./problem_statement/Mania_Pizza_Project_Statement.docx) to download the complete executive summary document highlighting the most important insights and strategic recommendations for Pizza Mania.
+ [Click here](./problem_statement/Executive_Statement.docx) to download the complete executive summary document highlighting the most important insights and strategic recommendations for Pizza Mania.
  
 #### Key Performance Indicators (KPIs) 🔑 
 
@@ -318,7 +318,7 @@ The following KPIs were identified to measure the performance and trends in sale
 
 These KPIs were selected to provide a comprehensive view of Pizza Mania’s sales dynamics, customer preferences, and overall performance. They guide decision-making to optimize sales, enhance customer satisfaction, and increase profitability.
 
-### 6.2 Conclusion 
+### 6.2 Conclusion ✅
 This Power BI-driven analysis of Pizza Mania sales provides valuable insights into customer behaviour, sales performance, and product popularity. By leveraging well-structured data modelling, dynamic DAX measures, and interactive visualizations, the project enables Pizza Mania's CEO to make informed business decisions based on data-driven evidence.  
 
 #### Key findings from the analysis include:  
@@ -331,7 +331,7 @@ With these insights, Pizza Mania can optimize inventory management, refine marke
 ---
 
 <a id="Seven"></a>
-## **🔚 7. Project Details**
+## **🚀 7. Project Details**
 <a href=#cont>Back to Project Structure</a>
 ### 7.1 Tools and Technologies Used 🛠
 - **Power BI Desktop**: The primary tool for data visualization and analysis.
@@ -376,7 +376,7 @@ With these insights, Pizza Mania can optimize inventory management, refine marke
 - `LICENSE`: The project is licensed under the Apache License 2.0.
 ---
 
-### 7.5 References
+### 7.5 References 👋
 1. **Maven Analytics** for providing the [Pizza Sales dataset](https://www.mavenanalytics.io/data-playground?dataStructure=Multiple%20tables&order=date_added%2Cdesc&page=4&pageSize=5).
 2. **Power BI Community** for visualization inspiration and dashboarding techniques.
 3. **Pizza Icons**: Pizza icon used in the project was created by [Freepik - Flaticon](https://www.flaticon.com/free-icons/pizza).
@@ -384,7 +384,7 @@ With these insights, Pizza Mania can optimize inventory management, refine marke
 
 ---
 
-## Contact
+## Contact 📞
 For any questions or suggestions, feel free to reach out:
 
 - **LinkedIn**: [LinkedIn Page](https://www.linkedin.com/in/obengafari)
