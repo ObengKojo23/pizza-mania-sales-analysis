@@ -3,17 +3,6 @@
 ---
 <a id="cont"></a>
 
-### **Project Structure**
-
-<a href=#one>1. Introduction</a>
-
-<a href=#two>2. Data Collection & Extraction</a>
-
-<a href=#three>3. Loading, Cleaning & Transformation of Data (ETL Process)</a>
-
-<a href=#four>4. Data Modelling</a>
-
-<a href=#five>5. Data Report & Visualisaition</a>
 
 ---
  <a id="one"></a>
@@ -251,7 +240,7 @@ The decision to create calculated measures and columns stems from the questions 
 ## **🔍 5.  Data Report & Visualisaition**
 <a href=#cont>Back to Project Structure</a>
 
-This is where I jumped to the report view and created all the visuals to answer key questions and give further insights to the CEO of Mania Pizza.
+This is where I jumped to the report view and created all the visuals to answer key questions and give further insights to the CEO of Pizza Mania.
 - `Cards`: Was used to display key metrics (Total Sales, Total Orders, Number of Customers, Average Pizzas Per Order and Average Orders Per Day).
 - `Line Chart`: Was used to show trends over time (Quarterly, Monthly and Daily sales).
 - `Bar/Column Charts` Were used to show The Peak Hours and compare Pizza Orders (Quarterly, Monthly and Daily sales).
@@ -275,13 +264,17 @@ Screenshot 4
 ![image 1](./images/dashboard_4.png)
   
 
+<a id="Six"></a>
+## **🔍 6. Executive Summary**
+<a href=#cont>Back to Project Structure</a>
+
 ## Key Performance Indicators (KPIs) 🔑 
 
-The following KPIs were identified to measure the performance and trends in sales at Pizza Mania. These KPIs help uncover insights into customer behavior and sales patterns:
+The following KPIs were identified to measure the performance and trends in sales at Pizza Mania. These KPIs help uncover insights into customer behaviour and sales patterns:
 
-- **`Daily Order Count:`** Tracks the number of customers each day, helping to identify busy and slow days.
+- **`Daily Order Count:`** Tracks the number of customers daily, helping to identify busy and slow days.
 
-- **`Daily Sales:`** Analyzes sales by days to identify peak times, guiding staffing and operational planning.
+- **`Daily Sales:`** Analyzes sales by day to identify peak times, guiding staffing and operational planning.
 
 - **`Average Order Size:`** Measures the typical number of pizzas in each order, giving insight into customer ordering patterns (e.g., whether they often order in groups or as individuals).
 
@@ -293,18 +286,18 @@ The following KPIs were identified to measure the performance and trends in sale
 
 - **`Seasonal Revenue Trends:`** Shows revenue by months, weeks, and days of the week, helping to identify sales cycles and potential seasonal promotions.
 
-- **`Menu Optimization Opportunities:`** Identifies low-performing pizzas that may need to be discontinued or adjusted, and suggests potential promotions to increase sales of specific items.
+- **`Menu Optimization Opportunities:`** Identifies low-performing pizzas that may need to be discontinued or adjusted and suggests potential promotions to increase sales of specific items.
 
-- **`Average Order Value (AOV):`** Measures the average revenue per order, useful for setting targets for up-selling or cross-selling.
-
+- **`Average Order Value (AOV):`** Measures the average revenue per order, helpful in setting targets for up-selling or cross-selling.
+  
 - **`Sales Margin by Pizza Type:`** Tracks the margin of each pizza type, supporting decisions on pricing adjustments or cost-cutting.
 
 
-These KPIs were selected to provide a comprehensive view of the pizza mania’s sales dynamics, customer preferences, and overall performance. They guide decision-making to optimize sales, enhance customer satisfaction, and increase profitability.
+These KPIs were selected to provide a comprehensive view of Pizza Mania’s sales dynamics, customer preferences, and overall performance. They guide decision-making to optimize sales, enhance customer satisfaction, and increase profitability.
 
 ## Conclusion 📝
 
-This project offers valuable insights into the pizza outlet's sales dynamics, helping to inform business decisions on menu design, promotion strategies, and operational efficiency. The analysis is also a showcase of Power BI’s potential for transforming raw data into actionable insights, a skillset valuable in various industries.
+This project offers valuable insights into the pizza outlet's sales dynamics, helping to inform business decisions on menu design, promotion strategies, and operational efficiency.
 
 ---
 ### How to Run This Project 🚀 
