@@ -58,10 +58,6 @@ This project seeks to analyze our business data in order to optimize performance
 
 The datasets for this project contain a year's worth of pizza sales orders from `Pizza Mania`. The extracted datasets came in four separate `CSV` formats, which are detailed in the table below:
 
-To access all four datasets for the project, [Click here](./Datasets) to download. 
-
-All four original datasets were downloaded from [Maven Analytics](https://www.mavenanalytics.io/data-playground?dataStructure=Multiple%20tables&order=date_added%2Cdesc&page=4&pageSize=5).
-
 | Datasets        | Features            | Description                                                                                                                                                                       |
 |---------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | orders        | order_id         | Unique identifier for each order placed by a table                                                                                                                                |
@@ -80,8 +76,7 @@ All four original datasets were downloaded from [Maven Analytics](https://www.ma
 |               | category         | Category that the pizza falls under in the menu (Classic, Chicken, Supreme, or Veggie)                                                                                             |
 |               | ingredients      | Comma-delimited ingredients used in the pizza as shown in the menu (they all include Mozzarella Cheese, even if not specified; and they all include Tomato Sauce, unless specified) |
 
-This data allows for a deep dive into customer behaviour, order composition, and revenue generation over time.
-
+To access all four datasets for the project, [Click here](./Datasets) to download. 
 
 ---
 
